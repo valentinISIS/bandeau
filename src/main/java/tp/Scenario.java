@@ -13,4 +13,15 @@ public class Scenario {
     public Scenario(Bandeau bandeau) {
         this.bandeau = bandeau;
     }
+
+    public void addEffect(Effect e){
+        effects.add(e);
+    }
+
+    public void play(){
+        for (Effect e: effects) {
+            e.doEffect(bandeau);
+            bandeau.sleep(500);
+        }
+    }
 }
